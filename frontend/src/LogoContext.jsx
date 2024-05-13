@@ -1,5 +1,5 @@
 import { createContext, useEffect, useState } from "react";
-import ByteBot from "./media/logo/anything-llm.png";
+import ByteBot from "./media/logo/bb-logo.png";
 import System from "./models/system";
 
 export const LogoContext = createContext();
