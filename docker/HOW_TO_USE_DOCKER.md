@@ -1,4 +1,4 @@
-# How to use Dockerized Anything LLM
+# How to use Dockerized Byte Bot
 
 Use the Dockerized version of ByteBot for a much faster and complete startup of ByteBot.
 
