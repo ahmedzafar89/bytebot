@@ -20,8 +20,8 @@ const webBrowsing = {
               call: JSON.stringify({ query: "Winner of today's world series" }),
             },
             {
-              prompt: "What is AnythingLLM?",
-              call: JSON.stringify({ query: "AnythingLLM" }),
+              prompt: "What is ByteBot?",
+              call: JSON.stringify({ query: "ByteBot" }),
             },
             {
               prompt: "Current AAPL stock price",

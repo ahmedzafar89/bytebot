@@ -2,7 +2,7 @@ import { forwardRef, memo } from "react";
 import { Warning } from "@phosphor-icons/react";
 import renderMarkdown from "@/utils/chat/markdown";
 import { embedderSettings } from "@/main";
-import AnythingLLMIcon from "@/assets/anything-llm-icon.svg";
+import ByteBotIcon from "@/assets/bytebot-icon.svg";
 import { formatDate } from "@/utils/date";
 
 const PromptReply = forwardRef(
@@ -13,8 +13,8 @@ const PromptReply = forwardRef(
       return (
         <div className={`flex items-start w-full h-fit justify-start`}>
           <img
-            src={embedderSettings.settings.assistantIcon || AnythingLLMIcon}
-            alt="Anything LLM Icon"
+            src={embedderSettings.settings.assistantIcon || ByteBotIcon}
+            alt="ByteBot Icon"
             className="w-9 h-9 flex-shrink-0 ml-2"
           />
           <div
@@ -33,8 +33,8 @@ const PromptReply = forwardRef(
       return (
         <div className={`flex items-end w-full h-fit justify-start`}>
           <img
-            src={embedderSettings.settings.assistantIcon || AnythingLLMIcon}
-            alt="Anything LLM Icon"
+            src={embedderSettings.settings.assistantIcon || ByteBotIcon}
+            alt="ByteBot Icon"
             className="w-9 h-9 flex-shrink-0 ml-2"
           />
           <div
@@ -61,7 +61,7 @@ const PromptReply = forwardRef(
           className={`text-[10px] font-medium text-gray-400 ml-[54px] mr-6 mb-2 text-left`}
         >
           {embedderSettings.settings.assistantName ||
-            "Anything LLM Chat Assistant"}
+            "ByteBot Chat Assistant"}
         </div>
         <div
           key={uuid}
@@ -69,8 +69,8 @@ const PromptReply = forwardRef(
           className={`flex items-start w-full h-fit justify-start`}
         >
           <img
-            src={embedderSettings.settings.assistantIcon || AnythingLLMIcon}
-            alt="Anything LLM Icon"
+            src={embedderSettings.settings.assistantIcon || ByteBotIcon}
+            alt="ByteBot Icon"
             className="w-9 h-9 flex-shrink-0 ml-2"
           />
           <div

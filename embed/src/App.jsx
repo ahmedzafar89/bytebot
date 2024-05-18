@@ -40,7 +40,7 @@ export default function App() {
       <div className={`fixed inset-0 z-50 ${isChatOpen ? "block" : "hidden"}`}>
         <div
           className={`${windowHeight} ${windowWidth} h-full w-full bg-white fixed bottom-0 right-0 mb-4 md:mr-4 rounded-2xl border border-gray-300 shadow-[0_4px_14px_rgba(0,0,0,0.25)] ${positionClasses[position]}`}
-          id="anything-llm-chat"
+          id="bytebot-chat"
         >
           {isChatOpen && (
             <ChatWindow

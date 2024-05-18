@@ -9,7 +9,7 @@ import OllamaLogo from "@/media/llmprovider/ollama.png";
 import LMStudioLogo from "@/media/llmprovider/lmstudio.png";
 import LocalAiLogo from "@/media/llmprovider/localai.png";
 import TogetherAILogo from "@/media/llmprovider/togetherai.png";
-import AnythingLLMIcon from "@/media/logo/anything-llm-icon.png";
+import ByteBotIcon from "@/media/logo/bytebot-icon.png";
 import MistralLogo from "@/media/llmprovider/mistral.jpeg";
 import HuggingFaceLogo from "@/media/llmprovider/huggingface.png";
 import PerplexityLogo from "@/media/llmprovider/perplexity.png";
@@ -48,7 +48,7 @@ import { useNavigate } from "react-router-dom";
 
 const TITLE = "LLM Preference";
 const DESCRIPTION =
-  "AnythingLLM can work with many LLM providers. This will be the service which handles chatting.";
+  "ByteBot can work with many LLM providers. This will be the service which handles chatting.";
 
 const LLMS = [
   {
@@ -185,10 +185,10 @@ const LLMS = [
   {
     name: "Native",
     value: "native",
-    logo: AnythingLLMIcon,
+    logo: ByteBotIcon,
     options: (settings) => <NativeLLMOptions settings={settings} />,
     description:
-      "Use a downloaded custom Llama model for chatting on this AnythingLLM instance.",
+      "Use a downloaded custom Llama model for chatting on this ByteBot instance.",
   },
 ];
 
@@ -203,7 +203,7 @@ export default function LLMPreference({
   const [settings, setSettings] = useState(null);
   const formRef = useRef(null);
   const hiddenSubmitButtonRef = useRef(null);
-  const isHosted = window.location.hostname.includes("useanything.com");
+  const isHosted = window.location.hostname.includes("bytebot,com");
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -231,7 +231,7 @@ export default function LLMPreference({
     const data = {};
     const formData = new FormData(form);
     data.LLMProvider = selectedLLM;
-    // Default to AnythingLLM embedder and LanceDB
+    // Default to ByteBot embedder and LanceDB
     data.EmbeddingEngine = "native";
     data.VectorDB = "lancedb";
     for (var [key, value] of formData.entries()) data[key] = value;

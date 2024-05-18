@@ -2,7 +2,7 @@ import useLogo from "@/hooks/useLogo";
 import System from "@/models/system";
 import showToast from "@/utils/toast";
 import { useEffect, useRef, useState } from "react";
-import AnythingLLM from "@/media/logo/anything-llm.png";
+import ByteBot from "@/media/logo/bytebot.png";
 import { Plus } from "@phosphor-icons/react";
 
 export default function CustomLogo() {

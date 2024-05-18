@@ -4,7 +4,7 @@ import renderMarkdown from "@/utils/chat/markdown";
 import { embedderSettings } from "@/main";
 import { v4 } from "uuid";
 import createDOMPurify from "dompurify";
-import AnythingLLMIcon from "@/assets/anything-llm-icon.svg";
+import ByteBotIcon from "@/assets/bytebot-icon.svg";
 import { formatDate } from "@/utils/date";
 
 const DOMPurify = createDOMPurify(window);
@@ -24,7 +24,7 @@ const HistoricalMessage = forwardRef(
             className={`text-[10px] font-medium text-gray-400 ml-[54px] mr-6 mb-2 text-left`}
           >
             {embedderSettings.settings.assistantName ||
-              "Anything LLM Chat Assistant"}
+              "ByteBot Chat Assistant"}
           </div>
         )}
         <div
@@ -36,10 +36,10 @@ const HistoricalMessage = forwardRef(
         >
           {role === "assistant" && (
             <img
-              src={embedderSettings.settings.assistantIcon || AnythingLLMIcon}
-              alt="Anything LLM Icon"
+              src={embedderSettings.settings.assistantIcon || ByteBotIcon}
+              alt="ByteBot Icon"
               className="w-9 h-9 flex-shrink-0 ml-2 mt-2"
-              id="anything-llm-icon"
+              id="bytebot-icon"
             />
           )}
           <div
@@ -48,8 +48,8 @@ const HistoricalMessage = forwardRef(
               error
                 ? "bg-red-200 rounded-lg mr-[37px] ml-[9px]"
                 : role === "user"
-                  ? `${embedderSettings.USER_STYLES} anything-llm-user-message`
-                  : `${embedderSettings.ASSISTANT_STYLES} anything-llm-assistant-message`
+                  ? `${embedderSettings.USER_STYLES} bytebot-user-message`
+                  : `${embedderSettings.ASSISTANT_STYLES} bytebot-assistant-message`
             } shadow-[0_4px_14px_rgba(0,0,0,0.25)]`}
           >
             <div className="flex">

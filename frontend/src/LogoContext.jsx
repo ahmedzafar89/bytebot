@@ -1,5 +1,5 @@
 import { createContext, useEffect, useState } from "react";
-import AnythingLLM from "./media/logo/anything-llm.png";
+import ByteBot from "./media/logo/bytebot.png";
 import System from "./models/system";
 
 export const LogoContext = createContext();
@@ -11,9 +11,9 @@ export function LogoProvider({ children }) {
     async function fetchInstanceLogo() {
       try {
         const logoURL = await System.fetchLogo();
-        logoURL ? setLogo(logoURL) : setLogo(AnythingLLM);
+        logoURL ? setLogo(logoURL) : setLogo(ByteBot);
       } catch (err) {
-        setLogo(AnythingLLM);
+        setLogo(ByteBot);
         console.error("Failed to fetch logo:", err);
       }
     }

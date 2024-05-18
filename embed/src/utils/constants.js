@@ -1,1 +1,1 @@
-export const CHAT_UI_REOPEN = "___anythingllm-chat-widget-open___";
+export const CHAT_UI_REOPEN = "___bytebot-chat-widget-open___";

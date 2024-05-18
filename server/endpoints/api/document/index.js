@@ -26,7 +26,7 @@ function apiDocumentEndpoints(app) {
     async (request, response) => {
       /*
     #swagger.tags = ['Documents']
-    #swagger.description = 'Upload a new file to AnythingLLM to be parsed and prepared for embedding.'
+    #swagger.description = 'Upload a new file to ByteBot to be parsed and prepared for embedding.'
     #swagger.requestBody = {
       description: 'File to be uploaded.',
       required: true,
@@ -55,14 +55,14 @@ function apiDocumentEndpoints(app) {
               error: null,
               documents: [
                 {
-                  "location": "custom-documents/anythingllm.txt-6e8be64c-c162-4b43-9997-b068c0071e8b.json",
-                  "name": "anythingllm.txt-6e8be64c-c162-4b43-9997-b068c0071e8b.json",
-                  "url": "file:///Users/tim/Documents/anything-llm/collector/hotdir/anythingllm.txt",
-                  "title": "anythingllm.txt",
+                  "location": "custom-documents/bytebot.txt-6e8be64c-c162-4b43-9997-b068c0071e8b.json",
+                  "name": "bytebot.txt-6e8be64c-c162-4b43-9997-b068c0071e8b.json",
+                  "url": "file:///Users/tim/Documents/bytebot/collector/hotdir/bytebot.txt",
+                  "title": "bytebot.txt",
                   "docAuthor": "Unknown",
                   "description": "Unknown",
                   "docSource": "a text file uploaded by the user.",
-                  "chunkSource": "anythingllm.txt",
+                  "chunkSource": "bytebot.txt",
                   "published": "1/16/2024, 3:07:00 PM",
                   "wordCount": 93,
                   "token_count_estimate": 115,
@@ -126,7 +126,7 @@ function apiDocumentEndpoints(app) {
     async (request, response) => {
       /*
     #swagger.tags = ['Documents']
-    #swagger.description = 'Upload a valid URL for AnythingLLM to scrape and prepare for embedding.'
+    #swagger.description = 'Upload a valid URL for ByteBot to scrape and prepare for embedding.'
     #swagger.requestBody = {
       description: 'Link of web address to be scraped.',
       required: true,
@@ -136,7 +136,7 @@ function apiDocumentEndpoints(app) {
             schema: {
               type: 'object',
               example: {
-                "link": "https://useanything.com"
+                "link": "https://bytebot,com"
               }
             }
           }
@@ -153,17 +153,17 @@ function apiDocumentEndpoints(app) {
               documents: [
                 {
                   "id": "c530dbe6-bff1-4b9e-b87f-710d539d20bc",
-                  "url": "file://useanything_com.html",
-                  "title": "useanything_com.html",
+                  "url": "file://bytebot_com.html",
+                  "title": "bytebot_com.html",
                   "docAuthor": "no author found",
                   "description": "No description found.",
                   "docSource": "URL link uploaded by the user.",
-                  "chunkSource": "https:useanything.com.html",
+                  "chunkSource": "https:bytebot,com.html",
                   "published": "1/16/2024, 3:46:33 PM",
                   "wordCount": 252,
-                  "pageContent": "AnythingLLM is the best....",
+                  "pageContent": "ByteBot is the best....",
                   "token_count_estimate": 447,
-                  "location": "custom-documents/url-useanything_com-c530dbe6-bff1-4b9e-b87f-710d539d20bc.json"
+                  "location": "custom-documents/url-bytebot_com-c530dbe6-bff1-4b9e-b87f-710d539d20bc.json"
                 }
               ]
             }
@@ -234,7 +234,7 @@ function apiDocumentEndpoints(app) {
           schema: {
             type: 'object',
             example: {
-              "textContent": "This is the raw text that will be saved as a document in AnythingLLM.",
+              "textContent": "This is the raw text that will be saved as a document in ByteBot.",
               "metadata": {
                 keyOne: "valueOne",
                 keyTwo: "valueTwo",
@@ -264,7 +264,7 @@ function apiDocumentEndpoints(app) {
                   "chunkSource": "no chunk source specified",
                   "published": "1/16/2024, 3:46:33 PM",
                   "wordCount": 252,
-                  "pageContent": "AnythingLLM is the best....",
+                  "pageContent": "ByteBot is the best....",
                   "token_count_estimate": 447,
                   "location": "custom-documents/raw-my-doc-text-c530dbe6-bff1-4b9e-b87f-710d539d20bc.json"
                 }
@@ -507,7 +507,7 @@ function apiDocumentEndpoints(app) {
   app.get("/v1/document/:docName", [validApiKey], async (request, response) => {
     /*
     #swagger.tags = ['Documents']
-    #swagger.description = 'Get a single document by its unique AnythingLLM document name'
+    #swagger.description = 'Get a single document by its unique ByteBot document name'
     #swagger.parameters['docName'] = {
         in: 'path',
         description: 'Unique document name to find (name in /documents)',

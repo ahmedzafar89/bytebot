@@ -32,7 +32,7 @@ export default function ChatHistory({
   };
 
   useEffect(() => {
-    const storedTextSize = window.localStorage.getItem("anythingllm_text_size");
+    const storedTextSize = window.localStorage.getItem("bytebot_text_size");
     if (storedTextSize) {
       setTextSize(getTextSizeClass(storedTextSize));
     }
