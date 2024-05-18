@@ -1,4 +1,4 @@
-import ByteBotIcon from "@/assets/anything-llm-icon.svg";
+import ByteBotIcon from "@/assets/bytebot-icon.svg";
 import ChatService from "@/models/chatService";
 import {
   ArrowCounterClockwise,
@@ -46,7 +46,7 @@ export default function ChatWindowHeader({
   return (
     <div
       className="flex items-center relative rounded-t-2xl bg-black/10"
-      id="anything-llm-header"
+      id="bytebot-header"
     >
       <div className="flex justify-center items-center w-full h-[76px]">
         <img

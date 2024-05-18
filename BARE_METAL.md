@@ -19,9 +19,9 @@ Here you can find the scripts and known working process to run ByteBot outside o
 ## Getting started
 
 1. Clone the repo into your server as the user who the application will run as.
-`git clone git@github.com:Mintplex-Labs/anything-llm.git`
+`git clone git@github.com:Mintplex-Labs/bytebot.git`
 
-2. `cd anything-llm` and run `yarn setup`. This will install all dependencies to run in production as well as debug the application.
+2. `cd bytebot` and run `yarn setup`. This will install all dependencies to run in production as well as debug the application.
 
 3. `cp server/.env.example server/.env` to create the basic ENV file for where instance settings will be read from on service start.
 
@@ -78,7 +78,7 @@ _note_ You should `pkill node` before running an update so that you are not runn
 ```shell
 #!/bin/bash
 
-cd $HOME/anything-llm &&\
+cd $HOME/bytebot &&\
 git checkout . &&\
 git pull origin master &&\
 echo "HEAD pulled to commit $(git log -1 --pretty=format:"%h" | tail -n 1)"
@@ -87,7 +87,7 @@ echo "Freezing current ENVs"
 curl -I "http://localhost:3001/api/env-dump" | head -n 1|cut -d$' ' -f2
 
 echo "Rebuilding Frontend"
-cd $HOME/anything-llm/frontend && yarn && yarn build && cd $HOME/anything-llm
+cd $HOME/bytebot/frontend && yarn && yarn build && cd $HOME/bytebot
 
 echo "Copying to Sever Public"
 rm -rf server/public
@@ -97,21 +97,21 @@ echo "Killing node processes"
 pkill node
 
 echo "Installing collector dependencies"
-cd $HOME/anything-llm/collector && yarn
+cd $HOME/bytebot/collector && yarn
 
 echo "Installing server dependencies & running migrations"
-cd $HOME/anything-llm/server && yarn
-cd $HOME/anything-llm/server && npx prisma migrate deploy --schema=./prisma/schema.prisma
-cd $HOME/anything-llm/server && npx prisma generate
+cd $HOME/bytebot/server && yarn
+cd $HOME/bytebot/server && npx prisma migrate deploy --schema=./prisma/schema.prisma
+cd $HOME/bytebot/server && npx prisma generate
 
 echo "Booting up services."
 truncate -s 0 /logs/server.log # Or any other log file location.
 truncate -s 0 /logs/collector.log
 
-cd $HOME/anything-llm/server
+cd $HOME/bytebot/server
 (NODE_ENV=production node index.js) &> /logs/server.log &
 
-cd $HOME/anything-llm/collector
+cd $HOME/bytebot/collector
 (NODE_ENV=production node index.js) &> /logs/collector.log &
 ```
 

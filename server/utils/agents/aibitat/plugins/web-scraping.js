@@ -19,8 +19,8 @@ const webScraping = {
             "Scrapes the content of a webpage or online resource from a provided URL.",
           examples: [
             {
-              prompt: "What is useanything.com about?",
-              call: JSON.stringify({ uri: "https://useanything.com" }),
+              prompt: "What is bytebot,com about?",
+              call: JSON.stringify({ uri: "https://bytebot,com" }),
             },
             {
               prompt: "Scrape https://example.com",

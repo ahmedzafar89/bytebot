@@ -21,6 +21,7 @@ import {
   ClosedCaptioning,
   EyeSlash,
   SplitVertical,
+  Microphone,
 } from "@phosphor-icons/react";
 import useUser from "@/hooks/useUser";
 import { USER_BACKGROUND_COLOR } from "@/utils/constants";
@@ -127,14 +128,14 @@ export default function SettingsSidebar() {
     <div>
       <Link
         to={paths.home()}
-        className="flex shrink-0 max-w-[55%] items-center justify-start mx-[38px] my-[18px]"
+        className="flex shrink-0 max-w-[55%] items-center justify-start mx-[30px] my-[18px]"
       >
-        {/* <img
+        <img
           src={logo}
           alt="Logo"
-          className="rounded max-h-[24px]"
+          className="rounded max-h-[40px]"
           style={{ objectFit: "contain" }}
-        /> */}
+        />
       </Link>
       <div
         ref={sidebarRef}
@@ -276,6 +277,14 @@ const SidebarOptions = ({ user = null }) => (
       href={paths.settings.llmPreference()}
       btnText="LLM Preference"
       icon={<ChatText className="h-5 w-5 flex-shrink-0" />}
+      user={user}
+      flex={true}
+      allowedRole={["admin"]}
+    />
+    <Option
+      href={paths.settings.audioPreference()}
+      btnText="Voice and Speech Support"
+      icon={<Microphone className="h-5 w-5 flex-shrink-0" />}
       user={user}
       flex={true}
       allowedRole={["admin"]}

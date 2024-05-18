@@ -64,7 +64,7 @@ export default function PrivacyAndDataHandling() {
 function ThirdParty({ settings }) {
   const llmChoice = settings?.LLMProvider || "openai";
   const embeddingEngine = settings?.EmbeddingEngine || "openai";
-  const vectorDb = settings?.VectorDB || "pinecone";
+  const vectorDb = settings?.VectorDB || "lancedb";
 
   return (
     <div className="py-8 w-full flex items-start justify-center flex-col gap-y-6 border-b-2 border-white/10">
@@ -178,7 +178,7 @@ function TelemetryLogs({ settings }) {
             based information. To see the list of event tags collected you can
             look on{" "}
             <a
-              href="https://github.com/search?q=repo%3AMintplex-Labs%2Fanything-llm%20.sendTelemetry(&type=code"
+              href="https://github.com/search?q=repo%3AMintplex-Labs%2Fbytebot%20.sendTelemetry(&type=code"
               className="underline text-blue-400"
               target="_blank"
             >

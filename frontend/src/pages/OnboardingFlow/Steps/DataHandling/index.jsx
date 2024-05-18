@@ -1,6 +1,6 @@
 import PreLoader from "@/components/Preloader";
 import System from "@/models/system";
-import ByteBotIcon from "@/media/logo/bb-icon.png";
+import ByteBotIcon from "@/media/logo/bytebot-icon.png";
 import OpenAiLogo from "@/media/llmprovider/openai.png";
 import GenericOpenAiLogo from "@/media/llmprovider/generic-openai.png";
 import AzureOpenAiLogo from "@/media/llmprovider/azure.png";
@@ -17,6 +17,8 @@ import OpenRouterLogo from "@/media/llmprovider/openrouter.jpeg";
 import GroqLogo from "@/media/llmprovider/groq.png";
 import KoboldCPPLogo from "@/media/llmprovider/koboldcpp.png";
 import TextGenWebUILogo from "@/media/llmprovider/text-generation-webui.png";
+import LiteLLMLogo from "@/media/llmprovider/litellm.png";
+
 import CohereLogo from "@/media/llmprovider/cohere.png";
 import ZillizLogo from "@/media/vectordbs/zilliz.png";
 import AstraDBLogo from "@/media/vectordbs/astraDB.png";
@@ -168,6 +170,13 @@ export const LLM_SELECTION_PRIVACY = {
     ],
     logo: CohereLogo,
   },
+  litellm: {
+    name: "LiteLLM",
+    description: [
+      "Your model and chats are only accessible on the server running LiteLLM",
+    ],
+    logo: LiteLLMLogo,
+  },
 };
 
 export const VECTOR_DB_PRIVACY = {
@@ -299,7 +308,7 @@ export default function DataHandling({ setHeader, setForwardBtn, setBackBtn }) {
     async function fetchKeys() {
       const _settings = await System.keys();
       setLLMChoice(_settings?.LLMProvider || "openai");
-      setVectorDb(_settings?.VectorDB || "pinecone");
+      setVectorDb(_settings?.VectorDB || "lancedb");
       setEmbeddingEngine(_settings?.EmbeddingEngine || "openai");
 
       setLoading(false);

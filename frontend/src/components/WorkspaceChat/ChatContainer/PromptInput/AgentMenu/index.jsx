@@ -117,7 +117,7 @@ export function useAvailableAgents() {
   return { showAgents, setShowAgents };
 }
 
-const SEEN_FT_AGENT_MODAL = "anythingllm_seen_first_time_agent_modal";
+const SEEN_FT_AGENT_MODAL = "bytebot_seen_first_time_agent_modal";
 function FirstTimeAgentUser() {
   const { isOpen, openModal, closeModal } = useModal();
   useEffect(() => {

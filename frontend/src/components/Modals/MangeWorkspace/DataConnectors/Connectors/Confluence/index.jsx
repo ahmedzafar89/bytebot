@@ -66,7 +66,7 @@ export default function ConfluenceOptions() {
                   type="url"
                   name="pageUrl"
                   className="bg-zinc-900 text-white placeholder:text-white/20 text-sm rounded-lg focus:border-white block w-full p-2.5"
-                  placeholder="https://example.atlassian.net/wiki/spaces/~7120208c08555d52224113949698b933a3bb56/pages/851969/Test+anythingLLM+page"
+                  placeholder="https://example.atlassian.net/wiki/spaces/~7120208c08555d52224113949698b933a3bb56/pages/851969/Test+bytebot+page"
                   required={true}
                   autoComplete="off"
                   spellCheck={false}
