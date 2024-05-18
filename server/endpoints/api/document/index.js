@@ -55,14 +55,14 @@ function apiDocumentEndpoints(app) {
               error: null,
               documents: [
                 {
-                  "location": "custom-documents/anythingllm.txt-6e8be64c-c162-4b43-9997-b068c0071e8b.json",
-                  "name": "anythingllm.txt-6e8be64c-c162-4b43-9997-b068c0071e8b.json",
-                  "url": "file:///Users/tim/Documents/anything-llm/collector/hotdir/anythingllm.txt",
-                  "title": "anythingllm.txt",
+                  "location": "custom-documents/bytebot.txt-6e8be64c-c162-4b43-9997-b068c0071e8b.json",
+                  "name": "bytebot.txt-6e8be64c-c162-4b43-9997-b068c0071e8b.json",
+                  "url": "file:///Users/tim/Documents/bytebot/collector/hotdir/bytebot.txt",
+                  "title": "bytebot.txt",
                   "docAuthor": "Unknown",
                   "description": "Unknown",
                   "docSource": "a text file uploaded by the user.",
-                  "chunkSource": "anythingllm.txt",
+                  "chunkSource": "bytebot.txt",
                   "published": "1/16/2024, 3:07:00 PM",
                   "wordCount": 93,
                   "token_count_estimate": 115,
@@ -136,7 +136,7 @@ function apiDocumentEndpoints(app) {
             schema: {
               type: 'object',
               example: {
-                "link": "https://useanything.com"
+                "link": "https://bytebot,com"
               }
             }
           }
@@ -153,17 +153,17 @@ function apiDocumentEndpoints(app) {
               documents: [
                 {
                   "id": "c530dbe6-bff1-4b9e-b87f-710d539d20bc",
-                  "url": "file://useanything_com.html",
-                  "title": "useanything_com.html",
+                  "url": "file://bytebot_com.html",
+                  "title": "bytebot_com.html",
                   "docAuthor": "no author found",
                   "description": "No description found.",
                   "docSource": "URL link uploaded by the user.",
-                  "chunkSource": "https:useanything.com.html",
+                  "chunkSource": "https:bytebot,com.html",
                   "published": "1/16/2024, 3:46:33 PM",
                   "wordCount": 252,
                   "pageContent": "ByteBot is the best....",
                   "token_count_estimate": 447,
-                  "location": "custom-documents/url-useanything_com-c530dbe6-bff1-4b9e-b87f-710d539d20bc.json"
+                  "location": "custom-documents/url-bytebot_com-c530dbe6-bff1-4b9e-b87f-710d539d20bc.json"
                 }
               ]
             }

@@ -194,7 +194,7 @@ const WorkspaceChats = {
         const user = res.user_id ? await User.get({ id: res.user_id }) : null;
         res.user = user
           ? { username: user.username }
-          : { username: "unknown user" };
+          : { username: "user" };
       }
 
       return results;

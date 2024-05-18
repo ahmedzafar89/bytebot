@@ -34,19 +34,19 @@ export default {
     },
   },
   github: () => {
-    return "https://github.com/Mintplex-Labs/anything-llm";
+    return "";
   },
   discord: () => {
     return "https://discord.com/invite/6UyHPeGZAC";
   },
   docs: () => {
-    return "https://docs.useanything.com";
+    return "https://docs.bytebot,com";
   },
   mailToMintplex: () => {
     return "mailto:team@mintplexlabs.com";
   },
   hosting: () => {
-    return "https://my.mintplexlabs.com/aio-checkout?product=anythingllm";
+    return "https://my.mintplexlabs.com/aio-checkout?product=bytebot";
   },
   workspace: {
     chat: (slug) => {
@@ -97,6 +97,9 @@ export default {
     },
     transcriptionPreference: () => {
       return "/settings/transcription-preference";
+    },
+    audioPreference: () => {
+      return "/settings/audio-preference";
     },
     embedder: {
       modelPreference: () => "/settings/embedding-preference",

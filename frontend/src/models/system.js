@@ -4,8 +4,8 @@ import DataConnector from "./dataConnector";
 
 const System = {
   cacheKeys: {
-    footerIcons: "anythingllm_footer_links",
-    supportEmail: "anythingllm_support_email",
+    footerIcons: "bytebot_footer_links",
+    supportEmail: "bytebot_support_email",
   },
   ping: async function () {
     return await fetch(`${API_BASE}/ping`)
@@ -332,7 +332,7 @@ const System = {
       })
       .then((blob) => (blob ? URL.createObjectURL(blob) : null))
       .catch((e) => {
-        console.log(e);
+        // console.log(e);
         return null;
       });
   },

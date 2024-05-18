@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import ByteBotIcon from "@/media/logo/bb-icon.png";
+import ByteBotIcon from "@/media/logo/bytebot-icon.png";
 import WorkspaceLLMItem from "./WorkspaceLLMItem";
 import { AVAILABLE_LLM_PROVIDERS } from "@/pages/GeneralSettings/LLMPreference";
 import { CaretUpDown, MagnifyingGlass, X } from "@phosphor-icons/react";

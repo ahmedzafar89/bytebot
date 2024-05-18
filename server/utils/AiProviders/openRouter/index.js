@@ -24,7 +24,7 @@ class OpenRouterLLM {
       baseURL: this.basePath,
       apiKey: process.env.OPENROUTER_API_KEY ?? null,
       defaultHeaders: {
-        "HTTP-Referer": "https://useanything.com",
+        "HTTP-Referer": "https://bytebot,com",
         "X-Title": "ByteBot",
       },
     });
@@ -36,7 +36,7 @@ class OpenRouterLLM {
       user: this.promptWindowLimit() * 0.7,
     };
 
-    this.embedder = !embedder ? new NativeEmbedder() : embedder;
+    this.embedder = embedder ?? new NativeEmbedder();
     this.defaultTemp = 0.7;
 
     if (!fs.existsSync(cacheFolder))

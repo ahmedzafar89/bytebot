@@ -6,7 +6,7 @@
 
 > [!WARNING]
 > The core ByteBot team publishes a pre-built version of the script that is bundled
-> with the main application. You can find it at the frontend URL `/embed/anythingllm-chat-widget.min.js`.
+> with the main application. You can find it at the frontend URL `/embed/bytebot-chat-widget.min.js`.
 > You should only be working in this repo if you are wanting to build your own custom embed.
 
 This folder of ByteBot contains the source code for how the embedded version of ByteBot works to provide a public facing interface of your workspace.
@@ -42,12 +42,12 @@ The primary way of embedding a workspace as a chat widget is via a simple `<scri
 An example of a script tag embed
 REQUIRED data attributes:
   data-embed-id // The unique id of your embed with its default settings
-  data-base-api-url // The URL of your anythingLLM instance backend
+  data-base-api-url // The URL of your bytebot instance backend
 -->
 <script
   data-embed-id="5fc05aaf-2f2c-4c84-87a3-367a4692c1ee"
   data-base-api-url="http://localhost:3001/api/embed"
-  src="http://localhost:3000/embed/anythingllm-chat-widget.min.js"
+  src="http://localhost:3000/embed/bytebot-chat-widget.min.js"
 ></script>
 ```
 
@@ -75,7 +75,7 @@ REQUIRED data attributes:
 
 - `data-greeting` — Default text message to be shown when chat is opened and no previous message history is found.
 
-- `data-no-sponsor` — Setting this attribute to anything will hide the custom or default sponsor at the bottom of an open chat window.
+- `data-no-sponsor` — Setting this attribute to bytebot will hide the custom or default sponsor at the bottom of an open chat window.
 
 - `data-sponsor-link` — A clickable link in the sponsor section in the footer of an open chat window.
 
@@ -83,7 +83,7 @@ REQUIRED data attributes:
 
 - `data-position` - Adjust the positioning of the embed chat widget and open chat button. Default `bottom-right`. Options are `bottom-right`, `bottom-left`, `top-right`, `top-left`.
 
-- `data-assistant-name` - Set the chat assistant name that appears above each chat message. Default `ByteBot Chat Assistant`
+- `data-assistant-name` - Set the chat assistant name that appears above each chat message. Default `ByteBott Assistant`
 
 - `data-assistant-icon` - Set the icon of the chat assistant.
 

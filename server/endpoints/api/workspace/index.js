@@ -72,7 +72,7 @@ function apiWorkspaceEndpoints(app) {
         multiUserMode: multiUserMode(response),
         LLMSelection: process.env.LLM_PROVIDER || "openai",
         Embedder: process.env.EMBEDDING_ENGINE || "inherit",
-        VectorDbSelection: process.env.VECTOR_DB || "pinecone",
+        VectorDbSelection: process.env.VECTOR_DB || "lancedb",
       });
       await EventLogs.logEvent("api_workspace_created", {
         workspaceName: workspace?.name || "Unknown Workspace",
@@ -390,7 +390,7 @@ function apiWorkspaceEndpoints(app) {
         "application/json": {
           example: {
             adds: ["custom-documents/my-pdf.pdf-hash.json"],
-            deletes: ["custom-documents/anythingllm.txt-hash.json"]
+            deletes: ["custom-documents/bytebot.txt-hash.json"]
           }
         }
       }
@@ -476,7 +476,7 @@ function apiWorkspaceEndpoints(app) {
               id: 'chat-uuid',
               type: "abort | textResponse",
               textResponse: "Response to your query",
-              sources: [{title: "anythingllm.txt", chunk: "This is a context chunk used in the answer of the prompt by the LLM,"}],
+              sources: [{title: "bytebot.txt", chunk: "This is a context chunk used in the answer of the prompt by the LLM,"}],
               close: true,
               error: "null | text string of the failure mode."
            }
@@ -525,7 +525,7 @@ function apiWorkspaceEndpoints(app) {
         await Telemetry.sendTelemetry("sent_chat", {
           LLMSelection: process.env.LLM_PROVIDER || "openai",
           Embedder: process.env.EMBEDDING_ENGINE || "inherit",
-          VectorDbSelection: process.env.VECTOR_DB || "pinecone",
+          VectorDbSelection: process.env.VECTOR_DB || "lancedb",
         });
         await EventLogs.logEvent("api_sent_chat", {
           workspaceName: workspace?.name,
@@ -533,6 +533,7 @@ function apiWorkspaceEndpoints(app) {
         });
         response.status(200).json({ ...result });
       } catch (e) {
+        console.log(e.message, e);
         response.status(500).json({
           id: uuidv4(),
           type: "abort",
@@ -591,7 +592,7 @@ function apiWorkspaceEndpoints(app) {
               id: 'uuid-123',
               type: "abort | textResponseChunk",
               textResponse: "final chunk of LLM output!",
-              sources: [{title: "anythingllm.txt", chunk: "This is a context chunk used in the answer of the prompt by the LLM. This will only return in the final chunk."}],
+              sources: [{title: "bytebot.txt", chunk: "This is a context chunk used in the answer of the prompt by the LLM. This will only return in the final chunk."}],
               close: true,
               error: "null | text string of the failure mode."
             }
@@ -647,7 +648,7 @@ function apiWorkspaceEndpoints(app) {
         await Telemetry.sendTelemetry("sent_chat", {
           LLMSelection: process.env.LLM_PROVIDER || "openai",
           Embedder: process.env.EMBEDDING_ENGINE || "inherit",
-          VectorDbSelection: process.env.VECTOR_DB || "pinecone",
+          VectorDbSelection: process.env.VECTOR_DB || "lancedb",
         });
         await EventLogs.logEvent("api_sent_chat", {
           workspaceName: workspace?.name,
@@ -655,7 +656,7 @@ function apiWorkspaceEndpoints(app) {
         });
         response.end();
       } catch (e) {
-        console.error(e);
+        console.log(e.message, e);
         writeResponseChunk(response, {
           id: uuidv4(),
           type: "abort",

@@ -94,7 +94,7 @@ function handleDefaultStreamResponse(response, stream, responseProps) {
           // It can be possible that the chunk decoding is running away
           // and the message chunk fails to append due to string length.
           // In this case abort the chunk and reset so we can continue.
-          // ref: https://github.com/Mintplex-Labs/anything-llm/issues/416
+          // ref: https://github.com/Mintplex-Labs/bytebot/issues/416
           try {
             chunk += message;
           } catch (e) {
