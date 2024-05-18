@@ -6,7 +6,7 @@
 
 > [!WARNING]
 > The core AnythingLLM team publishes a pre-built version of the script that is bundled
-> with the main application. You can find it at the frontend URL `/embed/anythingllm-chat-widget.min.js`.
+> with the main application. You can find it at the frontend URL `/embed/bytebot-chat-widget.min.js`.
 > You should only be working in this repo if you are wanting to build your own custom embed.
 
 This folder of AnythingLLM contains the source code for how the embedded version of AnythingLLM works to provide a public facing interface of your workspace.
@@ -47,7 +47,7 @@ REQUIRED data attributes:
 <script
   data-embed-id="5fc05aaf-2f2c-4c84-87a3-367a4692c1ee"
   data-base-api-url="http://localhost:3001/api/embed"
-  src="http://localhost:3000/embed/anythingllm-chat-widget.min.js"
+  src="http://localhost:3000/embed/bytebot-chat-widget.min.js"
 ></script>
 ```
 

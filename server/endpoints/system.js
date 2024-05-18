@@ -116,8 +116,8 @@ function systemEndpoints(app) {
           await EventLogs.logEvent(
             "failed_login_invalid_username",
             {
-              ip: request.ip || "Unknown IP",
-              username: username || "Unknown user",
+              ip: request.ip || "user IP",
+              username: username || "user",
             },
             existingUser?.id
           );
@@ -134,8 +134,8 @@ function systemEndpoints(app) {
           await EventLogs.logEvent(
             "failed_login_invalid_password",
             {
-              ip: request.ip || "Unknown IP",
-              username: username || "Unknown user",
+              ip: request.ip || "user IP",
+              username: username || "user",
             },
             existingUser?.id
           );
@@ -152,8 +152,8 @@ function systemEndpoints(app) {
           await EventLogs.logEvent(
             "failed_login_account_suspended",
             {
-              ip: request.ip || "Unknown IP",
-              username: username || "Unknown user",
+              ip: request.ip || "user IP",
+              username: username || "user",
             },
             existingUser?.id
           );
@@ -175,8 +175,8 @@ function systemEndpoints(app) {
         await EventLogs.logEvent(
           "login_event",
           {
-            ip: request.ip || "Unknown IP",
-            username: existingUser.username || "Unknown user",
+            ip: request.ip || "user IP",
+            username: existingUser.username || "user",
           },
           existingUser?.id
         );
@@ -218,7 +218,7 @@ function systemEndpoints(app) {
           )
         ) {
           await EventLogs.logEvent("failed_login_invalid_password", {
-            ip: request.ip || "Unknown IP",
+            ip: request.ip || "user IP",
             multiUserMode: false,
           });
           response.status(401).json({
@@ -231,7 +231,7 @@ function systemEndpoints(app) {
 
         await Telemetry.sendTelemetry("login_event", { multiUserMode: false });
         await EventLogs.logEvent("login_event", {
-          ip: request.ip || "Unknown IP",
+          ip: request.ip || "user IP",
           multiUserMode: false,
         });
         response.status(200).json({
