@@ -38,7 +38,7 @@ export default function App() {
     <>
       <Head />
       <div
-        id="anything-llm-embed-chat-container"
+        id="bytebot-embed-chat-container"
         className={`fixed inset-0 z-50 ${isChatOpen ? "block" : "hidden"}`}
       >
         <div
@@ -56,7 +56,7 @@ export default function App() {
       </div>
       {!isChatOpen && (
         <div
-          id="anything-llm-embed-chat-button-container"
+          id="bytebot-embed-chat-button-container"
           className={`fixed bottom-0 ${positionClasses[position]} mb-4 z-50`}
         >
           <OpenButton
