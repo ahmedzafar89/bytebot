@@ -24,7 +24,7 @@ const webScraping = {
             },
             {
               prompt: "Scrape https://example.com",
-              call: JSON.stringify({ uri: "https://example.com" }),
+              call: JSON.stringify({ url: "https://example.com" }),
             },
           ],
           parameters: {

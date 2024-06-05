@@ -43,7 +43,7 @@ export default function DefaultChatContainer() {
         className={`flex justify-center items-end w-full ${AI_BACKGROUND_COLOR} md:mt-0 mt-[40px]`}
       >
         <div
-          className={`pt-10 pb-6 px-4 w-full flex gap-x-5 md:max-w-[800px] flex-col`}
+          className={`pt-10 pb-6 px-4 w-full flex gap-x-5 md:max-w-[80%] flex-col`}
         >
           <div className="flex gap-x-5">
             <Jazzicon size={36} user={{ uid: "system" }} role={"assistant"} />
@@ -65,7 +65,7 @@ export default function DefaultChatContainer() {
         className={`flex justify-center items-end w-full ${USER_BACKGROUND_COLOR}`}
       >
         <div
-          className={`py-6 px-4 w-full flex gap-x-5 md:max-w-[800px] flex-col`}
+          className={`py-6 px-4 w-full flex gap-x-5 md:max-w-[80%] flex-col`}
         >
           <div className="flex gap-x-5">
             <Jazzicon
@@ -89,7 +89,7 @@ export default function DefaultChatContainer() {
         className={`flex justify-center items-end w-full ${AI_BACKGROUND_COLOR}`}
       >
         <div
-          className={`py-6 px-4 w-full flex gap-x-5 md:max-w-[800px] flex-col`}
+          className={`py-6 px-4 w-full flex gap-x-5 md:max-w-[80%] flex-col`}
         >
           <div className="flex gap-x-5">
             <Jazzicon size={36} user={{ uid: "system" }} role={"assistant"} />
@@ -116,7 +116,7 @@ export default function DefaultChatContainer() {
         className={`flex justify-center items-end w-full ${USER_BACKGROUND_COLOR}`}
       >
         <div
-          className={`py-6 px-4 w-full flex gap-x-5 md:max-w-[800px] flex-col`}
+          className={`py-6 px-4 w-full flex gap-x-5 md:max-w-[80%] flex-col`}
         >
           <div className="flex gap-x-5">
             <Jazzicon
@@ -140,7 +140,7 @@ export default function DefaultChatContainer() {
         className={`flex justify-center items-end w-full ${AI_BACKGROUND_COLOR}`}
       >
         <div
-          className={`py-6 px-4 w-full flex gap-x-5 md:max-w-[800px] flex-col`}
+          className={`py-6 px-4 w-full flex gap-x-5 md:max-w-[80%] flex-col`}
         >
           <div className="flex gap-x-5">
             <Jazzicon size={36} user={{ uid: "system" }} role={"assistant"} />
