@@ -1,5 +1,5 @@
-.env.production
-.env.development
+.env.*
+!.env.example
 storage/assets/*
 !storage/assets/bytebot.png
 storage/documents/*
