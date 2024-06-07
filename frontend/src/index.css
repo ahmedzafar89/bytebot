@@ -37,7 +37,7 @@ a {
 
 @font-face {
   font-family: "plus-jakarta-sans";
-  src: url("../fonts/PlusJakartaSans.ttf");
+  src: url("../public/fonts/PlusJakartaSans.ttf");
   font-display: swap;
 }
 
