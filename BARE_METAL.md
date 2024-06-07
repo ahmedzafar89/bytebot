@@ -52,8 +52,7 @@ _(optional)_ Build native LLM support if using `native` as your LLM.
 
 3. Migrate and prepare your database file.
 ```
-cd server && npx prisma generate --schema=./prisma/schema.prisma
-cd server && npx prisma migrate deploy --schema=./prisma/schema.prisma
+cd server && npx prisma generate --schema=./prisma/schema.prisma && npx prisma migrate deploy --schema=./prisma/schema.prisma
 ```
 
 4. Boot the server in production

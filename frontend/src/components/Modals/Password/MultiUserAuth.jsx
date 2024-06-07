@@ -281,12 +281,12 @@ export default function MultiUserAuth() {
                 <h3 className="text-md md:text-2xl font-bold text-white text-center white-space-nowrap hidden md:block">
                   Welcome to
                 </h3>
-                <p className="text-4xl md:text-2xl font-bold bg-gradient-to-r from-[#75D6FF] via-[#FFFFFF] to-[#FFFFFF] bg-clip-text text-transparent">
+                <p className="text-4xl md:text-2xl font-bold bg-gradient-to-r from-[#ffffff] via-[#FFFFFF] to-[#FFFFFF] bg-clip-text text-transparent">
                   {customAppName || "ByteBot"}
                 </p>
               </div>
               <p className="text-sm text-white/90 text-center">
-                Sign in to your {customAppName || "ByteBot"} account.
+                Sign in
               </p>
             </div>
           </div>

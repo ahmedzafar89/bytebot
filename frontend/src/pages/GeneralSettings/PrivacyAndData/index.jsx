@@ -153,7 +153,7 @@ function TelemetryLogs({ settings }) {
     <div className="relative w-full max-h-full">
       <div className="relative rounded-lg">
         <div className="flex items-start justify-between px-6 py-4"></div>
-        <div className="space-y-6 flex h-full w-full">
+        {/* <div className="space-y-6 flex h-full w-full">
           <div className="w-full flex flex-col gap-y-4">
             <div className="">
               <label className="mb-2.5 block font-medium text-white">
@@ -201,7 +201,7 @@ function TelemetryLogs({ settings }) {
             </a>
             .
           </p>
-        </div>
+        </div> */}
       </div>
     </div>
   );

@@ -25,7 +25,7 @@ Choose one of the following
   - Set .env.development variable in server
 
 - Local
-  - Download yaml file `wget https://github.com/milvus-io/milvus/releases/download/v2.3.4/milvus-standalone-docker-compose.yml -O docker-compose.yml`
+  - Download yaml file `wget https://github.com/milvus-io/milvus/releases/download/v2.4.4/milvus-standalone-docker-compose.yml -O docker-compose.yml`
   - Start Milvus `sudo docker compose up -d`
   - Check the containers are up and running `sudo docker compose ps`
   - Get port number and set .env.development variable in server
