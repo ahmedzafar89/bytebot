@@ -1,6 +1,6 @@
-# v-env
-# .env
-# .env.example
+v-env
+.env
+!.env.example
 
 node_modules
 __pycache__

@@ -52,6 +52,10 @@ const KEY_MAPPING = {
     envKey: "GEMINI_LLM_MODEL_PREF",
     checks: [isNotEmpty, validGeminiModel],
   },
+  GeminiSafetySetting: {
+    envKey: "GEMINI_SAFETY_SETTING",
+    checks: [validGeminiSafetySetting],
+  },
 
   // LMStudio Settings
   LMStudioBasePath: {
@@ -350,6 +354,12 @@ const KEY_MAPPING = {
     checks: [isNotEmpty],
   },
 
+  // VoyageAi Options
+  VoyageAiApiKey: {
+    envKey: "VOYAGEAI_API_KEY",
+    checks: [isNotEmpty],
+  },
+
   // Whisper (transcription) providers
   WhisperProvider: {
     envKey: "WHISPER_PROVIDER",
@@ -387,6 +397,10 @@ const KEY_MAPPING = {
   },
   AgentSerperApiKey: {
     envKey: "AGENT_SERPER_DEV_KEY",
+    checks: [],
+  },
+  AgentBingSearchApiKey: {
+    envKey: "AGENT_BING_SEARCH_API_KEY",
     checks: [],
   },
 
@@ -516,10 +530,27 @@ function supportedTranscriptionProvider(input = "") {
 }
 
 function validGeminiModel(input = "") {
-  const validModels = ["gemini-pro", "gemini-1.5-pro-latest"];
+  const validModels = [
+    "gemini-pro",
+    "gemini-1.0-pro",
+    "gemini-1.5-pro-latest",
+    "gemini-1.5-flash-latest",
+  ];
   return validModels.includes(input)
     ? null
     : `Invalid Model type. Must be one of ${validModels.join(", ")}.`;
+}
+
+function validGeminiSafetySetting(input = "") {
+  const validModes = [
+    "BLOCK_NONE",
+    "BLOCK_ONLY_HIGH",
+    "BLOCK_MEDIUM_AND_ABOVE",
+    "BLOCK_LOW_AND_ABOVE",
+  ];
+  return validModes.includes(input)
+    ? null
+    : `Invalid Safety setting. Must be one of ${validModes.join(", ")}.`;
 }
 
 function validAnthropicModel(input = "") {
@@ -545,6 +576,7 @@ function supportedEmbeddingModel(input = "") {
     "ollama",
     "lmstudio",
     "cohere",
+    "voyageai",
   ];
   return supported.includes(input)
     ? null
@@ -735,6 +767,7 @@ async function dumpENV() {
     "AGENT_GSE_CTX",
     "AGENT_GSE_KEY",
     "AGENT_SERPER_DEV_KEY",
+    "AGENT_BING_SEARCH_API_KEY",
   ];
 
   // Simple sanitization of each value to prevent ENV injection via newline or quote escaping.

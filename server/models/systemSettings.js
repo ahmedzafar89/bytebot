@@ -27,6 +27,7 @@ const SystemSettings = {
     "agent_search_provider",
     "default_agent_skills",
     "agent_sql_connections",
+    "custom_app_name",
   ],
   validations: {
     footer_data: (updates) => {
@@ -69,7 +70,11 @@ const SystemSettings = {
     agent_search_provider: (update) => {
       try {
         if (update === "none") return null;
-        if (!["google-search-engine", "serper-dot-dev"].includes(update))
+        if (
+          !["google-search-engine", "serper-dot-dev", "bing-search"].includes(
+            update
+          )
+        )
           throw new Error("Invalid SERP provider.");
         return String(update);
       } catch (e) {
@@ -170,6 +175,7 @@ const SystemSettings = {
       AgentGoogleSearchEngineId: process.env.AGENT_GSE_CTX || null,
       AgentGoogleSearchEngineKey: process.env.AGENT_GSE_KEY || null,
       AgentSerperApiKey: process.env.AGENT_SERPER_DEV_KEY || null,
+      AgentBingSearchApiKey: process.env.AGENT_BING_SEARCH_API_KEY || null,
     };
   },
 
@@ -354,6 +360,8 @@ const SystemSettings = {
       // Gemini Keys
       GeminiLLMApiKey: !!process.env.GEMINI_API_KEY,
       GeminiLLMModelPref: process.env.GEMINI_LLM_MODEL_PREF || "gemini-pro",
+      GeminiSafetySetting:
+        process.env.GEMINI_SAFETY_SETTING || "BLOCK_MEDIUM_AND_ABOVE",
 
       // LMStudio Keys
       LMStudioBasePath: process.env.LMSTUDIO_BASE_PATH,
@@ -426,6 +434,9 @@ const SystemSettings = {
       // Cohere API Keys
       CohereApiKey: !!process.env.COHERE_API_KEY,
       CohereModelPref: process.env.COHERE_MODEL_PREF,
+
+      // VoyageAi API Keys
+      VoyageAiApiKey: !!process.env.VOYAGEAI_API_KEY,
     };
   },
 

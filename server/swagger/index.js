@@ -19,10 +19,10 @@ function waitForElm(selector) {
 }
 
 // Force change the Swagger logo in the header
-waitForElm('img[alt="Swagger UI"]').then((elm) => {
+waitForElm('.topbar-wrapper').then((elm) => {
   if (window.SWAGGER_DOCS_ENV === 'development') {
-    elm.src = 'http://localhost:3000/public/bytebot.png'
+    elm.innerHTML = `<img href='${window.location.origin}' src='http://localhost:3000/public/bytebot.png' width='200'/>`
   } else {
-    elm.src = `${window.location.origin}/bytebot.png`
+    elm.innerHTML = `<img href='${window.location.origin}' src='${window.location.origin}/bytebot.png' width='200'/>`
   }
 });

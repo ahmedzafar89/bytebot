@@ -16,7 +16,7 @@ function bootSSL(app, port = 3001) {
 
     server
       .listen(port, async () => {
-        await setupTelemetry();
+        // await setupTelemetry();
         new CommunicationKey(true);
         console.log(`Primary server in HTTPS mode listening on port ${port}`);
       })
@@ -43,7 +43,7 @@ function bootHTTP(app, port = 3001) {
 
   app
     .listen(port, async () => {
-      await setupTelemetry();
+      // await setupTelemetry();
       new CommunicationKey(true);
       console.log(`Primary server in HTTP mode listening on port ${port}`);
     })
