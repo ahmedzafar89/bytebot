@@ -1,6 +1,6 @@
 v-env
 .env
-!.env.example
+.env.example
 
 node_modules
 __pycache__
@@ -9,3 +9,4 @@ v-env
 aws_cf_deploy_bytebot.json
 yarn.lock
 *.bak
+*.tar.gz
